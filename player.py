@@ -38,6 +38,9 @@ class Player():
         for i in range(0,5):
             self.dice.append(Die())
 
+        # List of booleans for available score categories per player. All start at false.
+        self.usedCats = [False, False, False, False, False, False, False, False, False, False, False, False, False]
+
     # Method to roll all dice belonging to the player.
     def roll(self):
         self.result = []
