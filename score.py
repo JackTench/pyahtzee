@@ -13,6 +13,7 @@ def sumSingle(dice, selected):
 def highestRepeated(dice, minRepeats):
     unique = set(dice)
     repeats = [x for x in unique if count(dice, x) >= minRepeats]
+    return max(repeats) if repeats else 0
 
 def ofAKind(dice, n):
     return highestRepeated(dice, n) * n
@@ -32,3 +33,40 @@ def fives(dice):
     return sumSingle(dice, 5)
 def sixes(dice):
     return sumSingle(dice, 6)
+
+# Chance function. Just a sum of the dice.
+def chance(dice):
+    return sum(dice)
+
+# Functions for three and four of a kind.
+def threeOfAKind(dice):
+    return ofAKind(dice, 3)
+
+def fourOfAKind(dice):
+    return ofAKind(dice, 4)
+
+# Function for full house. From ChatGPT, might suck.
+def fullHouse(dice):
+    if set(dice) and (dice.count(x) == 2 or dice.count(x) == 3 for x in dice):
+        return 25
+    return 0
+
+# Functions for small and large straight.
+def smallStraight(dice):
+    if tuple(sorted(dice)) == (1,2,3,4,5):
+        return 15
+    else:
+        return 0
+
+def largeStraight(dice):
+    if tuple(sorted(dice)) == (2,3,4,5,6):
+        return 20
+    else:
+        return 0
+    
+# Function for Yahtzee!
+def yahtzee(dice):
+    if len(dice) == 5 and len(set(dice)) == 1:
+        return 50
+    else:
+        return 0
