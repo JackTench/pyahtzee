@@ -5,7 +5,6 @@
 import player
 import score
 import main
-import time
 
 # Create a simulated player.
 simulatedPlayer = player.Player("Simulated Player")
