@@ -1,6 +1,98 @@
 # Jack Tench 2023
 # Functions related to score.
 
+# Class for score card.
+class ScoreCard():
+
+    def __init__(self):
+        
+        # Set all scores to 0.
+        self.board = []
+        for i in range(0, 12):
+            self.board.append(0)
+
+    # Method to calculate total score.
+    def calculateTotal(self):
+        return sum(self.board)
+    
+    # Method to check if player has scored in category.
+    def checkCategory(self, category):
+
+        # Returns False if the corresponding score is 0.
+        if self.board[category] == 0:
+            return False
+        else:
+            return True
+        
+    # Method for scoring in a given category with dice.
+    def score(self, category, dice):
+
+        # Horrible if statements inbound.
+        # Score in chance.
+        if category == 0:
+            if self.checkCategory(category) == False:
+                self.board[category] = chance(dice)
+        
+        # Score in ones.
+        elif category == 1:
+            if self.checkCategory(category) == False:
+                self.board[category] = ones(dice)
+        
+        # Score in twos.
+        elif category == 2:
+            if self.checkCategory(category) == False:
+                self.board[category] = twos(dice)
+
+        # Score in threes.
+        elif category == 3:
+            if self.checkCategory(category) == False:
+                self.board[category] = threes(dice)
+        
+        # Score in fours.
+        elif category == 4:
+            if self.checkCategory(category) == False:
+                self.board[category] = fours(dice)
+
+        # Score in fives.
+        elif category == 5:
+            if self.checkCategory(category) == False:
+                self.board[category] = fives(dice)
+
+        # Score in sixes.
+        elif category == 6:
+            if self.checkCategory(category) == False:
+                self.board[category] = sixes(dice)
+
+        # Score in three of a kind.
+        elif category == 7:
+            if self.checkCategory(category) == False:
+                self.board[category] = threeOfAKind(dice)
+        
+        # Score in four of a kind.
+        elif category == 8:
+            if self.checkCategory(category) == False:
+                self.board[category] = fourOfAKind(dice)
+        
+        # Score in full house.
+        elif category == 9:
+            if self.checkCategory(category) == False:
+                self.board[category] = fullHouse(dice)
+
+        # Score in small straight.
+        elif category == 10:
+            if self.checkCategory(category) == False:
+                self.board[category] = smallStraight(dice)
+
+        # Score in large straight.
+        elif category == 11:
+            if self.checkCategory(category) == False:
+                self.board[category] = largeStraight(dice)
+
+        # Score in yahtzee.
+        elif category == 12:
+            if self.checkCategory(category) == False:
+                self.board[category] = yahtzee(dice)
+
 # Helper functions for calculating scores.
 # These functions are based off a gist by markheath on github.
 # https://gist.github.com/markheath/1036722/245773ec132815856fd0e60a37dce0520d57b811
