@@ -1,5 +1,5 @@
 import player as p
-import score
+import score as s
 
 player = p.Player("")
 
@@ -7,5 +7,8 @@ player = p.Player("")
 dice = player.roll()
 print(str(dice))
 
-score = score.ones(dice)
-print(str(score))
+score = s.ones(dice)
+print("Ones: " + str(score))
+
+score = s.twos(dice)
+print("Twos: " + str(score))
