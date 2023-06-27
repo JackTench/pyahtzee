@@ -93,19 +93,19 @@ def yahtzee(dice):
 # Print all valid ways to score a set of dice.
 def scoreDice(dice):
     scores = []     # Returns a list of scores that conforms to the data structure.
-    scores[0] = chance(dice)
-    scores[1] = ones(dice)
-    scores[2] = twos(dice)
-    scores[3] = threes(dice)
-    scores[4] = fours(dice)
-    scores[5] = fives(dice)
-    scores[6] = sixes(dice)
-    scores[7] = threeOfAKind(dice)
-    scores[8] = fourOfAKind(dice)
-    scores[9] = fullHouse(dice)
-    scores[10] = smallStraight(dice)
-    scores[11] = largeStraight(dice)
-    scores[12] = yahtzee(dice)
+    scores.append(chance(dice))
+    scores.append(ones(dice))
+    scores.append(twos(dice))
+    scores.append(threes(dice))
+    scores.append(fours(dice))
+    scores.append(fives(dice))
+    scores.append(sixes(dice))
+    scores.append(threeOfAKind(dice))
+    scores.append(fourOfAKind(dice))
+    scores.append(fullHouse(dice))
+    scores.append(smallStraight(dice))
+    scores.append(largeStraight(dice))
+    scores.append(yahtzee(dice))
     return scores
 
 # Print scores in terminal in a way a human can read them.
