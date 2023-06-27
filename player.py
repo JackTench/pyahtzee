@@ -2,6 +2,7 @@
 
 # Imports
 from random import randint
+import score
 
 # Class for die.
 class Die():
@@ -19,7 +20,7 @@ class Die():
     # This decouples querying the object from changing the number on the die with a roll.
     def get(self):
         return self.currentSideUp
-    
+
 # Class for player.
 class Player():
 
@@ -31,15 +32,14 @@ class Player():
             self.name = "Player"
         else:
             self.name = name
-        self.score = 0
 
         # Give player 5 dice.
         self.dice = []
         for i in range(0,5):
             self.dice.append(Die())
 
-        # List of booleans for available score categories per player. All start at false.
-        self.usedCats = [False, False, False, False, False, False, False, False, False, False, False, False, False]
+        # Give player a scorecard.
+        self.scorecard = score.ScoreCard()
 
     # Method to roll all dice belonging to the player.
     def roll(self):
@@ -52,11 +52,3 @@ class Player():
     # Method to return name of the player.
     def getName(self):
         return self.name
-
-    # Method to add score to the player.
-    def addScore(self, amount):
-        self.score += amount
-
-    # Method to return player's score.
-    def getScore(self):
-        return self.score
