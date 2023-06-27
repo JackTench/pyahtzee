@@ -52,3 +52,11 @@ class Player():
     # Method to return name of the player.
     def getName(self):
         return self.name
+    
+    # Method to score points on a player's scorecard.
+    def score(self, category, dice):
+        self.scorecard.score(category, dice)
+
+    # Method to return player's current total score.
+    def getTotalScore(self):
+        return self.scorecard.calculateTotal()
