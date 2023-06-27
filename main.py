@@ -27,3 +27,4 @@ players = []
 for playerName in playerNames:
     players.append(player.Player(playerName))
 
+# Game begins.
