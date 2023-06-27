@@ -45,11 +45,13 @@ def threeOfAKind(dice):
 def fourOfAKind(dice):
     return ofAKind(dice, 4)
 
-# Function for full house. From ChatGPT, might suck.
+# This function is currently broken.
+# TODO: Fix this, somebody help me!
 def fullHouse(dice):
     if set(dice) and (dice.count(x) == 2 or dice.count(x) == 3 for x in dice):
         return 25
-    return 0
+    else:
+        return 0
 
 # Functions for small and large straight.
 def smallStraight(dice):
