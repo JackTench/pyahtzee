@@ -7,8 +7,4 @@ player = p.Player("")
 dice = player.roll()
 print(str(dice))
 
-score = s.ones(dice)
-print("Ones: " + str(score))
-
-score = s.twos(dice)
-print("Twos: " + str(score))
+print(s.threeOfAKind(dice))
