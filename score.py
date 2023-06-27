@@ -45,21 +45,15 @@ def threeOfAKind(dice):
 def fourOfAKind(dice):
     return ofAKind(dice, 4)
 
-# This function is currently broken.
+# Function for full house.
 def fullHouse(dice):
-    
-    # Init array for counting the amount of times a number appears.
+    # ChatGPT cleaned up this messy function for me.
     counts = {}
 
-    # Do the maths.
     for die in dice:
-        if die in counts:
-            counts[die] += 1
-        else:
-            counts[die] = 1
+        counts[die] = counts.get(die, 0) + 1
     
-    # This is so messy, but it works.
-    if str(counts.values()) == "dict_values([2, 3])" or str(counts.values()) == "dict_values([3, 2])":
+    if set(counts.values()) == {2, 3}:
         return 25
     else:
         return 0
@@ -141,5 +135,3 @@ def printScores(dice):
     print("Small Straight: " + str(scores[10]))
     print("Large Staight: " + str(scores[11]))
     print("Yahtzee: " + str(scores[12]))
-
-print(str(fullHouse([1,1,1,2,2])))
