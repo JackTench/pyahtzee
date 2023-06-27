@@ -70,3 +70,61 @@ def yahtzee(dice):
         return 50
     else:
         return 0
+    
+# End of functions for calculating score.
+
+'''
+    Score Data Structure
+    scores[0] = Chance
+    scores[1] = Ones
+    scores[2] = Twos
+    scores[3] = Threes
+    scores[4] = Fours
+    scores[5] = Fives
+    scores[6] = Sixes
+    scores[7] = Three of a kind
+    scores[8] = Four of a kind
+    scores[9] = Full House
+    scores[10] = Small Straight
+    scores[11] = Large Straight
+    scores[12] = Yahtzee
+'''
+
+# Print all valid ways to score a set of dice.
+def scoreDice(dice):
+    scores = []     # Returns a list of scores that conforms to the data structure.
+    scores[0] = chance(dice)
+    scores[1] = ones(dice)
+    scores[2] = twos(dice)
+    scores[3] = threes(dice)
+    scores[4] = fours(dice)
+    scores[5] = fives(dice)
+    scores[6] = sixes(dice)
+    scores[7] = threeOfAKind(dice)
+    scores[8] = fourOfAKind(dice)
+    scores[9] = fullHouse(dice)
+    scores[10] = smallStraight(dice)
+    scores[11] = largeStraight(dice)
+    scores[12] = yahtzee(dice)
+    return scores
+
+# Print scores in terminal in a way a human can read them.
+def printScores(dice):
+
+    # Populate list with all possible scores.
+    scores = scoreDice(dice)
+
+    # Print statements.
+    print("Chance: " + str(scores[0]))
+    print("Ones: " + str(scores[1]))
+    print("Twos: " + str(scores[2]))
+    print("Threes: " + str(scores[3]))
+    print("Fours: " + str(scores[4]))
+    print("Fives: " + str(scores[5]))
+    print("Sixes: " + str(scores[6]))
+    print("3 of a kind: " + str(scores[7]))
+    print("4 of a kind: " + str(scores[8]))
+    print("Full House: " + str(scores[9]))
+    print("Small Straight: " + str(scores[10]))
+    print("Large Staight: " + str(scores[11]))
+    print("Yahtzee: " + str(scores[12]))
