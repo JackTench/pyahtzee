@@ -49,6 +49,10 @@ class Player():
             self.result.append(die.get())
         return self.result
     
+    # Method to return name of the player.
+    def getName(self):
+        return self.name
+
     # Method to add score to the player.
     def addScore(self, amount):
         self.score += amount
